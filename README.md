@@ -75,5 +75,5 @@ Build flavour - User can choose news source from build variant section in Androi
 `NEWS_SOURCE_TITLE` is a buildConfigField
 
 <p float="middle">
-<img src="https://github.com/hashir1296/news-app-challenge/blob/dfdfc49d66633548a64a0b245ed7aa5eb71d57e5/Screenshots/Screenshot_2.jpg" width = "300" height = "600"/>  
+<img src="https://github.com/hashir1296/news-app-challenge/blob/a63619a15e6a60298ee106a7a1ecdcd4c5af14c2/Screenshots/Screenshot%202023-06-27%20at%2011.15.14%20PM.png" width = "200" height = "500"/>  
 </p>
