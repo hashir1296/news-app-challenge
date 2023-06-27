@@ -1,4 +1,4 @@
-package com.example.newsapp_nongitversion.features.newsList
+package com.example.criticaltechworks_newsapp.presentation.newsList
 
 
 import androidx.annotation.Keep

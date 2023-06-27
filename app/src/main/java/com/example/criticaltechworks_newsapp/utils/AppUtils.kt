@@ -4,7 +4,7 @@ import android.text.Spanned
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import coil.load
-import com.example.newsapp_nongitversion.features.newsList.NewsHeadlinesResponseModel
+import com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlinesResponseModel
 import com.google.android.material.textview.MaterialTextView
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
