@@ -12,8 +12,10 @@ Please choose app flavour from the build build variant. News headlines depend up
 
 ```
 Android Studio Flamingo | 2022.2.1 Patch 1
-Kotlin : 1.4.0 
-Minimum android version : API LEVEL 26 (Android v8.0 Oreo) 
+Kotlin :222-1.8.20-release-AS3739.54
+Minimum android version : API LEVEL 26 (Android v8.0 Oreo)
+JavaVersion.VERSION_17
+Gradle version 8.0 
 ```
 
 ## Dependencies & Technologies
