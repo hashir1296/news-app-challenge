@@ -5,8 +5,11 @@ import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.example.criticaltechworks_newsapp.R
 import java.util.concurrent.Executor
 
+/*This helper provides the necessary functions needed to show fingerprint auth popup
+* */
 object BiometricHelper {
 
     private lateinit var executor: Executor
@@ -17,6 +20,12 @@ object BiometricHelper {
         executor = ContextCompat.getMainExecutor(context)
     }
 
+    /*This function tells if system should fingerprint auth or not
+    * @param fragment to show the popup
+    * @param callback to return to fragment
+    * Setup biometric prompt only when it meets both our conditions
+    * */
+
     fun showFingerPrintPromptIfAvailable(
         fragment: Fragment, callbacks: BiometricCallbacks
     ) {
@@ -26,19 +35,20 @@ object BiometricHelper {
         when (biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)) {
             BiometricManager.BIOMETRIC_SUCCESS -> {
                 //Setup prompt and show to user
-                setupBiometricPromptFor(fragment, callbacks)
+                setupBiometricPromptFor(fragment, callbacks, context)
                 biometricPrompt.authenticate(promptInfo)
-                callbacks.authPromptShownOnce()
             }
 
             else -> {
-                callbacks.authNotAvailable()
+                callbacks.onFingerPrintAuthNotAvailable()
             }
         }
     }
 
+
+    /*Prepare the biometric popup*/
     private fun setupBiometricPromptFor(
-        fragment: Fragment, callbacks: BiometricCallbacks
+        fragment: Fragment, callbacks: BiometricCallbacks, context: Context
     ) {
         biometricPrompt = BiometricPrompt(fragment,
             executor,
@@ -46,7 +56,7 @@ object BiometricHelper {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
-                    callbacks.onAuthSucceeded()
+                    callbacks.onFingerprintAuthSucceeded()
                 }
 
                 override fun onAuthenticationError(
@@ -54,26 +64,29 @@ object BiometricHelper {
                 ) {
                     super.onAuthenticationError(errorCode, errString)
                     if (errorCode == BiometricPrompt.ERROR_USER_CANCELED || errorCode == BiometricPrompt.ERROR_NEGATIVE_BUTTON) {
-                        callbacks.onAuthCancelled()
+                        callbacks.onFingerprintAuthCancelled()
                     }
                 }
             })
 
-        promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle("Biometric login for News App")
-            .setSubtitle("Log in using your biometric credential")
-            .setNegativeButtonText("Cancel").setConfirmationRequired(true)
+        promptInfo = BiometricPrompt.PromptInfo.Builder().setTitle(
+            "${context.getString(R.string.biometric_login_for)} ${
+                context.getString(
+                    R.string.app_name
+                )
+            }"
+        ).setSubtitle(context.getString(R.string.biometric_popup_subtitle))
+            .setNegativeButtonText(context.getString(R.string.cancel))
+            .setConfirmationRequired(true)
             .setAllowedAuthenticators(BiometricManager.Authenticators.BIOMETRIC_STRONG)
             .build()
     }
 }
 
 interface BiometricCallbacks {
-    fun authNotAvailable()
+    fun onFingerPrintAuthNotAvailable()
 
-    fun authPromptShownOnce()
+    fun onFingerprintAuthSucceeded()
 
-    fun onAuthSucceeded()
-
-    fun onAuthCancelled()
+    fun onFingerprintAuthCancelled()
 }

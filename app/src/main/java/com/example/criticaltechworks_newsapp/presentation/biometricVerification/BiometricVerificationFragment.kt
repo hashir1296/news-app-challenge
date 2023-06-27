@@ -27,26 +27,26 @@ class BiometricVerificationFragment : Fragment(), BiometricCallbacks {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         BiometricHelper.showFingerPrintPromptIfAvailable(this, this)
     }
 
-    override fun authNotAvailable() {
+    override fun onFingerPrintAuthNotAvailable() {
+        //User does not have finger print either on device or has not configured yet
         findNavController().navigate(
             BiometricVerificationFragmentDirections.actionBiometricVerificationFragmentToNewsHeadlinesListFragment()
         )
     }
 
-    override fun authPromptShownOnce() {
 
-    }
-
-    override fun onAuthSucceeded() {
+    override fun onFingerprintAuthSucceeded() {
+        //Fingerprint auth succeeded, navigate to next Listing fragment
         findNavController().navigate(
             BiometricVerificationFragmentDirections.actionBiometricVerificationFragmentToNewsHeadlinesListFragment()
         )
     }
 
-    override fun onAuthCancelled() {
+    override fun onFingerprintAuthCancelled() {
         //Finish activity and close app because fingerprint authentication is required
         requireActivity().finish()
     }
