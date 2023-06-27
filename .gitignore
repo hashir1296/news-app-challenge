@@ -40,4 +40,3 @@ obj/
 .idea/modules/app/MailRoomDemo.app.iml
 android/local.properties
 .android/local.properties
-gradle.properties

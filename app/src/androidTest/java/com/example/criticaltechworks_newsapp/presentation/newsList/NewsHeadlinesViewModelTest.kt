@@ -5,7 +5,6 @@ import org.junit.Assert.*
 import androidx.test.runner.AndroidJUnit4
 import com.example.criticaltechworks_newsapp.data.APIInterface
 import com.example.criticaltechworks_newsapp.data.UserRepositoryImpl
-import com.example.newsapp_nongitversion.features.newsList.NewsHeadlinesResponseModel
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.After

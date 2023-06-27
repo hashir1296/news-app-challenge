@@ -1,7 +1,7 @@
 package com.example.criticaltechworks_newsapp.data
 
 import com.example.criticaltechworks_newsapp.utils.Global
-import com.example.newsapp_nongitversion.features.newsList.NewsHeadlinesResponseModel
+import com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlinesResponseModel
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.GET

@@ -3,7 +3,6 @@ package com.example.criticaltechworks_newsapp.presentation.newsList
 import android.os.Parcelable
 import android.text.Spanned
 import androidx.core.text.HtmlCompat
-import com.example.newsapp_nongitversion.features.newsList.NewsHeadlinesResponseModel
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
 

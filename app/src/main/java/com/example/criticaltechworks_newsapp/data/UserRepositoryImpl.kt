@@ -1,7 +1,7 @@
 package com.example.criticaltechworks_newsapp.data
 
 import com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlinesPagingSource
-import com.example.newsapp_nongitversion.features.newsList.NewsHeadlinesResponseModel
+import com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlinesResponseModel
 import com.google.gson.Gson
 
 
