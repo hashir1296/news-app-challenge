@@ -1,7 +1,12 @@
 # news-app-challenge
 A smartphone app to show top headlines for a specific source (BBC news)
-<img src="https://github.com/hashir1296/news-app-challenge/blob/dfdfc49d66633548a64a0b245ed7aa5eb71d57e5/Screenshots/Screenshot_1.jpg" width = "300" height = "300"/>
-<img src="https://github.com/hashir1296/news-app-challenge/blob/4094baf5e5af74ec54707bcde251a7e330f44a7a/Screenshots/Screenshot_3.jpg" width = "300" height = "300"/>
+
+
+<p float="middle">
+<img src="https://github.com/hashir1296/news-app-challenge/blob/dfdfc49d66633548a64a0b245ed7aa5eb71d57e5/Screenshots/Screenshot_2.jpg" width = "300" height = "600"/>  
+<img src="https://github.com/hashir1296/news-app-challenge/blob/4094baf5e5af74ec54707bcde251a7e330f44a7a/Screenshots/Screenshot_3.jpg" width = "300" height = "600"/>
+</p>
+
 
 ## Requirements
 
@@ -23,7 +28,7 @@ Minimum android version : API LEVEL 26 (Android v8.0 Oreo)
 - Lifecycle
 - Navigation Component
 - Kotlin coil for image loading, downloading and cache
-- Testing: Mockk, Mockito, Paging-testing
+- Testing: Mockk, Mockito, Paging-testing, Coutines testing, Hilt
 ```
 
 ## Architecture & Structure
