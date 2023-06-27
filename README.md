@@ -60,15 +60,20 @@ data: All data related things like User Repository, remote APIs etc.
 ` NewsDetailFragment` contains headlines details, details are fetched from nav args
 ` NewsDetailViewModel` gets argument object and sets the data and emits to  `NewsDetailFragment` 
 <p float="middle">
-
 <img src="https://github.com/hashir1296/news-app-challenge/blob/dfdfc49d66633548a64a0b245ed7aa5eb71d57e5/Screenshots/Screenshot_2.jpg" width = "300" height = "600"/>  
 </p>
 
 
 ### Story3
-` BiometricVerificationFragment` show the biometric popup
-` BiometricHelper`contains the necessary functions to make biometric functional
+`BiometricVerificationFragment` show the biometric popup
+`BiometricHelper`contains the necessary functions to make biometric functional
 
 ### Story4
-` BiometricVerificationFragment` show the biometric popup
-` BiometricHelper`contains the necessary functions to make biometric functional
+Build flavour - User can choose news source from build variant section in Android studio
+`news-source` is the flavour dimension 
+`NEWS_SOURCE_ID` is a buildConfigField
+`NEWS_SOURCE_TITLE` is a buildConfigField
+
+<p float="middle">
+<img src="https://github.com/hashir1296/news-app-challenge/blob/dfdfc49d66633548a64a0b245ed7aa5eb71d57e5/Screenshots/Screenshot_2.jpg" width = "300" height = "600"/>  
+</p>
