@@ -8,6 +8,12 @@ A smartphone app to show top headlines for a specific source (BBC news)
 Please choose app flavour from the build build variant. News headlines depend upon the flavour user chooses
 ```
 
+
+## Apk link
+(https://i.diawi.com/fe8CLL)
+
+
+
 ## Requirements
 
 ```
