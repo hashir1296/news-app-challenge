@@ -27,7 +27,7 @@ android {
         )
 
         testInstrumentationRunner =
-            "com.example.newsapp_nongitversion.CustomRunner"
+            "com.example.criticaltechworks_newsapp.CustomRunner"
     }
 
     packaging {
@@ -138,6 +138,7 @@ dependencies {
     implementation("androidx.test:core-ktx:1.5.0")
     implementation("androidx.navigation:navigation-testing:2.6.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    testImplementation("junit:junit:4.12")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
     implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
 
