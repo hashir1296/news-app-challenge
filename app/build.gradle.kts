@@ -16,7 +16,7 @@ android {
         buildConfig = true
     }
     defaultConfig {
-        applicationId = "com.example.newsapp_nongitversion"
+        applicationId = "com.example.criticaltechworks_newsapp"
         minSdk = 26
         targetSdk = 33
         versionCode = 1
