@@ -1,6 +1,6 @@
 # news-app-challenge
 A smartphone app to show top headlines for a specific source (BBC news)
-<img src="https://github.com/hashir1296/news-app-challenge/blob/d2b82d9fbfac5d41bd4cdc540ee4f1b0b1a2093e/Screenshots/Screenshot_2023-06-27-22-45-03-890_com.example.newsapp_nongitversion.bbc.jpg" width = "300" height = "300"/>
+<img src="https://github.com/hashir1296/news-app-challenge/blob/dfdfc49d66633548a64a0b245ed7aa5eb71d57e5/Screenshots/Screenshot_1.jpg" width = "300" height = "300"/>
 <img src="https://github.com/hashir1296/news-app-challenge/blob/d2b82d9fbfac5d41bd4cdc540ee4f1b0b1a2093e/Screenshots/Screenshot_2023-06-27-22-45-03-890_com.example.newsapp_nongitversion.bbc.jpg" width = "300" height = "300"/>
 
 ## Requirements
