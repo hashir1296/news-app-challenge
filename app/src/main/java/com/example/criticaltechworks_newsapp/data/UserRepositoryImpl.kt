@@ -1,5 +1,7 @@
 package com.example.criticaltechworks_newsapp.data
 
+import com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlinesPagingSource
+import com.example.newsapp_nongitversion.features.newsList.NewsHeadlinesResponseModel
 import com.google.gson.Gson
 
 
@@ -9,7 +11,7 @@ class UserRepositoryImpl(
 
     override suspend fun getNewsHeadlinesFromNetwork(
         pageSize: Int, page: Int, source: String
-    ): NetworkResult<Void> {
+    ): NetworkResult<NewsHeadlinesResponseModel> {
 
         val api = apiInterface.getTopHeadlinesAsync(
             page = page, pageSize = pageSize, sources = source
@@ -19,6 +21,7 @@ class UserRepositoryImpl(
                 api.isSuccessful -> {
                     NetworkResult.Success(data = api.body())
                 }
+
                 else -> {
                     val errorBody = Gson().fromJson(
                         api.errorBody()?.string(),
@@ -37,4 +40,7 @@ class UserRepositoryImpl(
             )
         }
     }
+
+    override fun getPagingSource() = NewsHeadlinesPagingSource(apiInterface)
+
 }
