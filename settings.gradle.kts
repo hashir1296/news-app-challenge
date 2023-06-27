@@ -1,2 +1,2 @@
-rootProject.name = "News App- Non Git version"
+rootProject.name = "Critical Techworks - News App"
 include (":app")

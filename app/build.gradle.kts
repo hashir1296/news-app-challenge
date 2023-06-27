@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.newsapp_nongitversion"
+    namespace = "com.example.criticaltechworks_newsapp"
     compileSdk = 33
     buildFeatures {
         buildConfig = true
