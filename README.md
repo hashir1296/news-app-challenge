@@ -56,7 +56,7 @@ data: All data related things like User Repository, remote APIs etc.
  <img src="https://github.com/hashir1296/news-app-challenge/blob/4094baf5e5af74ec54707bcde251a7e330f44a7a/Screenshots/Screenshot_3.jpg" width = "300" height = "600"/> 
 </p>
 
-### Story1
+### Story2
 ` NewsDetailFragment` contains headlines details, details are fetched from nav args
 ` NewsDetailViewModel` gets argument object and sets the data and emits to  `NewsDetailFragment` 
 <p float="middle">
@@ -65,3 +65,10 @@ data: All data related things like User Repository, remote APIs etc.
 </p>
 
 
+### Story3
+` BiometricVerificationFragment` show the biometric popup
+` BiometricHelper`contains the necessary functions to make biometric functional
+
+### Story4
+` BiometricVerificationFragment` show the biometric popup
+` BiometricHelper`contains the necessary functions to make biometric functional
