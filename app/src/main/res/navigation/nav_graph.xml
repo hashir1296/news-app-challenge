@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/newsHeadlinesListFragment">
+    app:startDestination="@id/biometricVerificationFragment">
 
 
     <fragment
@@ -29,8 +29,17 @@
         <argument
             android:name="newsItem"
             app:argType="com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlineDomainModel" />
-
     </fragment>
 
-
+    <fragment
+        android:id="@+id/biometricVerificationFragment"
+        android:name="com.example.criticaltechworks_newsapp.presentation.biometricVerification.BiometricVerificationFragment"
+        android:label="BiometricVerificationFragment"
+        tools:layout="@layout/fragment_biometric_verification">
+        <action
+            android:id="@+id/action_biometricVerificationFragment_to_newsHeadlinesListFragment"
+            app:destination="@id/newsHeadlinesListFragment"
+            app:popUpTo="@id/biometricVerificationFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
