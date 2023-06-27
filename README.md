@@ -10,7 +10,7 @@ Please choose app flavour from the build build variant. News headlines depend up
 
 
 ## Apk link
-(https://i.diawi.com/fe8CLL)
+(https://i.diawi.com/TqdPyq)
 
 
 
