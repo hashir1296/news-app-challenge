@@ -12,6 +12,7 @@ import androidx.paging.LoadState
 import com.example.criticaltechworks_newsapp.databinding.FragmentNewsHeadlineListBinding
 import com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlinesViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -55,7 +56,7 @@ class NewsHeadlinesListFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        viewLifecycleOwner.lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
             headlineListAdapter.loadStateFlow.collectLatest { loadStates ->
                 binding.swipeRefreshLayout.isRefreshing =
                     loadStates.refresh is LoadState.Loading
@@ -68,7 +69,7 @@ class NewsHeadlinesListFragment : Fragment() {
     }
 
     private fun observerData() {
-        viewLifecycleOwner.lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main)  {
             viewModel.items.collectLatest {
                 headlineListAdapter.submitData(it)
             }

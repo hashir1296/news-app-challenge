@@ -187,6 +187,8 @@ dependencies {
 
     //Testing libraries - Instrumented Unit Tests
     androidTestImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test:core:1.5.0")
+    androidTestImplementation("androidx.test:core-ktx:1.5.0")
     androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
     androidTestImplementation("io.mockk:mockk-android:1.12.3")
     androidTestImplementation("org.mockito:mockito-android:2.7.15")
@@ -200,6 +202,8 @@ dependencies {
     androidTestImplementation("androidx.paging:paging-testing:3.2.0-rc01")
 
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("androidx.test.espresso:espresso-intents:3.5.1")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.44")
 
