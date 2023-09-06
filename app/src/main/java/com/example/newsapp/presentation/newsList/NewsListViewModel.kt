@@ -23,7 +23,8 @@ class NewsListViewModel @Inject constructor(private val repository: UserReposito
     val listViewType = _listViewType.asStateFlow()
 
 
-    private var currentQuery: String? = null
+    private var _currentQuery = MutableStateFlow<String?>(null)
+    val currentQuery = _currentQuery.asStateFlow()
 
 
     fun setListViewType(listViewType: ListViewType) {
@@ -31,9 +32,9 @@ class NewsListViewModel @Inject constructor(private val repository: UserReposito
     }
 
 
-    fun searchData(query: String) {
-        if (query != currentQuery) {
-            currentQuery = query
+    fun searchData(query: String?) {
+        if (query != _currentQuery.value) {
+            _currentQuery.value = query
         }
     }
 
@@ -43,7 +44,7 @@ class NewsListViewModel @Inject constructor(private val repository: UserReposito
             enablePlaceholders = false,
             prefetchDistance = 1
         ),
-        pagingSourceFactory = { repository.getPagingSource(searchQuery = currentQuery) }).flow.cachedIn(
+        pagingSourceFactory = { repository.getPagingSource(searchQuery = _currentQuery.value) }).flow.cachedIn(
         viewModelScope
     )
 }

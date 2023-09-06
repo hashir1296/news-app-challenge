@@ -84,22 +84,25 @@ class NewsListFragment : Fragment() {
 
         binding.etSearch.setOnEditorActionListener { textView, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH ||
-                actionId == EditorInfo.IME_ACTION_DONE || event.getAction() == KeyEvent.ACTION_DOWN &&
-                event.getKeyCode() == KeyEvent.KEYCODE_ENTER
+                actionId == EditorInfo.IME_ACTION_DONE || event.action == KeyEvent.ACTION_DOWN &&
+                event.keyCode == KeyEvent.KEYCODE_ENTER
             ) {
-                if (event == null || !event.isShiftPressed()) {
+                if (event == null || !event.isShiftPressed) {
                     // the user is done typing.
                     viewModel.searchData(textView.text.toString())
-                    headlineListAdapter.refresh()
-
-                    true; // consume.
                 }
             }
-            false; // pass on to other listeners.
+            false
         }
     }
 
     private fun observerData() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.currentQuery.collectLatest {
+                headlineListAdapter.refresh()
+            }
+        }
+
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
             viewModel.items.collectLatest {
                 headlineListAdapter.submitData(it)
