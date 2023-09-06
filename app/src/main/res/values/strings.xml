@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CriticalTechworks - News App</string>
+    <string name="app_name">News App</string>
     <string name="cancel">Cancel</string>
     <string name="biometric_popup_subtitle">Log in using your biometric credential</string>
     <string name="biometric_login_for">"Biometric login for "</string>

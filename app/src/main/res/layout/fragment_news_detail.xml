@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.criticaltechworks_newsapp.presentation.newsDetail.NewsDetailViewModel" />
+            type="com.example.newsapp.presentation.newsDetail.NewsDetailViewModel" />
     </data>
 
     <ScrollView

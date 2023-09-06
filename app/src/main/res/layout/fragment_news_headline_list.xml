@@ -7,9 +7,9 @@
 
         <variable
             name="viewModel"
-            type="com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlinesViewModel" />
+            type="com.example.newsapp.presentation.newsList.NewsHeadlinesViewModel" />
 
-        <import type="com.example.criticaltechworks_newsapp.utils.Global.Constants" />
+        <import type="com.example.newsapp.utils.Global.Constants" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

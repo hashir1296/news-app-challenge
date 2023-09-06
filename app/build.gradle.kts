@@ -10,13 +10,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.criticaltechworks_newsapp"
+    namespace = "com.example.newsapp"
     compileSdk = 33
     buildFeatures {
         buildConfig = true
     }
     defaultConfig {
-        applicationId = "com.example.criticaltechworks_newsapp"
+        applicationId = "com.example.newsapp"
         minSdk = 26
         targetSdk = 33
         versionCode = 1
