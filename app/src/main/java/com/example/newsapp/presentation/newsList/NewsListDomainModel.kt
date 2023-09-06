@@ -17,7 +17,7 @@ data class NewsHeadlineDomainModel(
 ) : Parcelable
 
 
-fun NewsHeadlinesResponseModel.Article.toDomainModel(): NewsHeadlineDomainModel {
+fun NewsListResponseModel.Article.toDomainModel(): NewsHeadlineDomainModel {
     return NewsHeadlineDomainModel(
         title = this.title ?: "",
         imageURL = this.urlToImage ?: "",

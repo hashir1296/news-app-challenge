@@ -1,7 +1,7 @@
 package com.example.newsapp.data
 
-import com.example.newsapp.presentation.newsList.NewsHeadlinesPagingSource
-import com.example.newsapp.presentation.newsList.NewsHeadlinesResponseModel
+import com.example.newsapp.presentation.newsList.NewsListPagingSource
+import com.example.newsapp.presentation.newsList.NewsListResponseModel
 import com.google.gson.Gson
 
 
@@ -10,11 +10,11 @@ class UserRepositoryImpl(
 ) : UserRepository {
 
     override suspend fun getNewsHeadlinesFromNetwork(
-        pageSize: Int, page: Int, source: String
-    ): NetworkResult<NewsHeadlinesResponseModel> {
+        pageSize: Int, page: Int, source: String, searchQuery: String?
+    ): NetworkResult<NewsListResponseModel> {
 
         val api = apiInterface.getTopHeadlinesAsync(
-            page = page, pageSize = pageSize, sources = source
+            page = page, pageSize = pageSize, sources = source, query = searchQuery
         ).await()
         return try {
             when {
@@ -41,6 +41,6 @@ class UserRepositoryImpl(
         }
     }
 
-    override fun getPagingSource() = NewsHeadlinesPagingSource(apiInterface)
+    override fun getPagingSource(searchQuery : String?) = NewsListPagingSource(apiInterface, searchQuery)
 
 }

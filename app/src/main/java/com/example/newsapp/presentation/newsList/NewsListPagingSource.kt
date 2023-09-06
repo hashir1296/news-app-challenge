@@ -10,14 +10,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 
-class NewsHeadlinesPagingSource(
-    private val apiInterface: APIInterface
+class NewsListPagingSource(
+    private val apiInterface: APIInterface,
+    private val searchQuery: String?
 ) : PagingSource<Int, NewsHeadlineDomainModel>() {
 
     companion object {
         const val PageSize = 20
     }
-
 
     override fun getRefreshKey(state: PagingState<Int, NewsHeadlineDomainModel>): Int? {
         return null
@@ -30,7 +30,8 @@ class NewsHeadlinesPagingSource(
                 val api = apiInterface.getTopHeadlinesAsync(
                     page = pageNumber,
                     pageSize = PageSize,
-                    sources = Global.Constants.HEADLINE_SOURCE_ID
+                    sources = Global.Constants.HEADLINE_SOURCE_ID,
+                    query = searchQuery
                 ).await()
                 withContext(Dispatchers.Main) {
                     if (api.isSuccessful) {

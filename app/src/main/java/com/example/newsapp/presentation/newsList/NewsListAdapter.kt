@@ -2,6 +2,7 @@ package com.example.newsapp.presentation.newsList
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.paging.PagingDataAdapter
@@ -11,13 +12,16 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import coil.load
 import com.example.newsapp.R
 import com.example.newsapp.databinding.HolderHeadlineItemBinding
+import com.example.newsapp.utils.ListViewType
 
-class NewsHeadlinesListAdapter(
+class NewsListAdapter(
     private val context: Context,
     private val onClick: (NewsHeadlineDomainModel) -> Unit
-) : PagingDataAdapter<NewsHeadlineDomainModel, NewsHeadlinesListAdapter.NewsItemViewHolder>(
+) : PagingDataAdapter<NewsHeadlineDomainModel, NewsListAdapter.NewsItemViewHolder>(
     HEADLINE_ITEM_DIFF_CALLBACK
 ) {
+
+    private var _listViewType: ListViewType = ListViewType.LINEAR
 
     inner class NewsItemViewHolder(private val binding: HolderHeadlineItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -45,8 +49,30 @@ class NewsHeadlinesListAdapter(
                 binding.itemView.setOnClickListener {
                     onClick.invoke(newsDomainModel)
                 }
+
+                //Set visibility
+
+                when (_listViewType) {
+                    ListViewType.LINEAR -> {
+                        binding.ivHeadlineImage.visibility = View.VISIBLE
+                    }
+
+                    ListViewType.GRID -> {
+                        binding.ivHeadlineImage.visibility = View.GONE
+                    }
+                }
             }
         }
+    }
+
+    fun setListViewType(listViewType: ListViewType) {
+        //Notifying adapter is a heavy operation so don't notify if the old value is same as new value
+
+        if (_listViewType != listViewType){
+            _listViewType = listViewType
+            notifyItemRangeChanged(0, snapshot().items.size)
+        }
+
     }
 
     override fun onCreateViewHolder(

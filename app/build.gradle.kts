@@ -11,14 +11,14 @@ plugins {
 
 android {
     namespace = "com.example.newsapp"
-    compileSdk = 33
+    compileSdk = 34
     buildFeatures {
         buildConfig = true
     }
     defaultConfig {
         applicationId = "com.example.newsapp"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0.0"
 
@@ -112,8 +112,10 @@ dependencies {
         )
     )
 
+    val pagingVersion = "3.2.0"
+
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.21")
-    implementation("androidx.appcompat:appcompat:1.7.0-alpha02")
+    implementation("androidx.appcompat:appcompat:1.7.0-alpha03")
     implementation("androidx.core:core-ktx:1.10.1")
 
     implementation("com.google.android.material:material:1.9.0")
@@ -129,18 +131,16 @@ dependencies {
     implementation("io.coil-kt:coil:2.4.0")
 
     //Navigation component
-    implementation("androidx.navigation:navigation-fragment-ktx:2.6.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.6.0")
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.6.0")
+    val navVersion ="2.7.1"
+    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$navVersion")
 
     // Hilt dependencies
     implementation("com.google.dagger:hilt-android:2.44")
     implementation("androidx.test:core-ktx:1.5.0")
-    implementation("androidx.navigation:navigation-testing:2.6.0")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    testImplementation("junit:junit:4.12")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
     implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
 
     //Okhttp & Stetho
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11")
@@ -153,8 +153,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
 
     //Kotlin Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+    val coroutinesVersion = "1.7.3"
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
     implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
 
     // Retrofit
@@ -169,46 +170,26 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
 
     //Paging Library
-    implementation("androidx.paging:paging-runtime-ktx:3.1.1")
+    implementation("androidx.paging:paging-runtime-ktx:$pagingVersion")
+
+    //Biometric verification
+    implementation("androidx.biometric:biometric:1.1.0")
+
+    //Swipe refresh
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
+
+
 
     //Testing libraries - Local Unit tests
-    testImplementation("androidx.arch.core:core-testing:2.2.0")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.9.0")
-    testImplementation("io.mockk:mockk:1.12.3")
-    testImplementation("androidx.paging:paging-common:3.1.1")
-    testImplementation("androidx.paging:paging-common:3.1.1")
-    testImplementation("androidx.paging:paging-runtime:3.1.1")
-    testImplementation("androidx.paging:paging-testing:3.2.0-rc01")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
     testImplementation("junit:junit:4.13.2")
     kaptTest("com.google.dagger:hilt-android-compiler:2.44")
 
 
-    //Testing libraries - Instrumented Unit Tests
+    //Testing libraries
     androidTestImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test:core:1.5.0")
     androidTestImplementation("androidx.test:core-ktx:1.5.0")
-    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
-    androidTestImplementation("io.mockk:mockk-android:1.12.3")
-    androidTestImplementation("org.mockito:mockito-android:2.7.15")
-
-    androidTestImplementation("androidx.test:runner:1.5.2")
-    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
-    androidTestImplementation("androidx.test:rules:1.5.0")
-    androidTestImplementation("app.cash.turbine:turbine:1.0.0")
-    androidTestImplementation("androidx.paging:paging-common:3.1.1")
-    androidTestImplementation("androidx.paging:paging-runtime:3.1.1")
-    androidTestImplementation("androidx.paging:paging-testing:3.2.0-rc01")
-
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.test.espresso:espresso-intents:3.5.1")
-    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
-    androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
-    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.44")
-
-    debugImplementation("androidx.fragment:fragment-testing:1.6.0")
-    implementation("androidx.biometric:biometric:1.1.0")
 
 
 }

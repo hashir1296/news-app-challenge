@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Primary" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimary">@color/purple</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondary">@color/yellow</item>
 
         <item name="android:statusBarColor">@android:color/background_dark
         </item>

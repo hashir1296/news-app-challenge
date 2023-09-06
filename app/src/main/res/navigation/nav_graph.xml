@@ -8,9 +8,9 @@
 
     <fragment
         android:id="@+id/newsHeadlinesListFragment"
-        android:name="com.example.newsapp.presentation.newsList.NewsHeadlinesListFragment"
+        android:name="com.example.newsapp.presentation.newsList.NewsListFragment"
         android:label="NewsHeadlinesListFragment"
-        tools:layout="@layout/fragment_news_headline_list">
+        tools:layout="@layout/fragment_news_list">
 
         <action
             android:id="@+id/action_newsHeadlinesListFragment_to_newsDetailFragment"

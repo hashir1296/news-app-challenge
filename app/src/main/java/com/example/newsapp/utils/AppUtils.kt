@@ -4,12 +4,12 @@ import android.text.Spanned
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import coil.load
-import com.example.newsapp.presentation.newsList.NewsHeadlinesResponseModel
+import com.example.newsapp.presentation.newsList.NewsListResponseModel
 import com.google.android.material.textview.MaterialTextView
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-fun List<NewsHeadlinesResponseModel.Article>.sortByDate() =
+fun List<NewsListResponseModel.Article>.sortByDate() =
     sortedByDescending {
         it.publishedAt
     }

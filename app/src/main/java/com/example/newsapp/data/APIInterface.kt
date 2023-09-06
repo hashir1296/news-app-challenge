@@ -1,7 +1,7 @@
 package com.example.newsapp.data
 
 import com.example.newsapp.utils.Global
-import com.example.newsapp.presentation.newsList.NewsHeadlinesResponseModel
+import com.example.newsapp.presentation.newsList.NewsListResponseModel
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.GET
@@ -13,7 +13,8 @@ interface APIInterface {
     fun getTopHeadlinesAsync(
         @Query("sources") sources: String,
         @Query("pageSize") pageSize: Int,
-        @Query("page") page: Int
-    ): Deferred<Response<NewsHeadlinesResponseModel>>
+        @Query("page") page: Int,
+        @Query("q") query : String?
+    ): Deferred<Response<NewsListResponseModel>>
 
 }

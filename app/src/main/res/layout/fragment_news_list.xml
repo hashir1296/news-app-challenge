@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.newsapp.presentation.newsList.NewsHeadlinesViewModel" />
+            type="com.example.newsapp.presentation.newsList.NewsListViewModel" />
 
         <import type="com.example.newsapp.utils.Global.Constants" />
     </data>
@@ -46,22 +46,66 @@
                 android:layout_height="match_parent"
                 android:padding="@dimen/_10sdp">
 
+
+                <LinearLayout
+                    android:id="@+id/llViewMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <EditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:drawableStart="@drawable/ic_search_24"
+                        android:hint="@string/search"
+                        android:imeOptions="actionSearch"
+                        android:importantForAutofill="no"
+                        android:inputType="text" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnListview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@color/gray_text"
+                        android:src="@drawable/ic_list_24"
+                        app:tint="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btnGridView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@color/gray_text"
+                        android:src="@drawable/ic_grid_view_24"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvHeadLines"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:clipToPadding="false"
                     android:nestedScrollingEnabled="true"
                     android:orientation="vertical"
                     android:paddingBottom="@dimen/_50sdp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llViewMode"
                     tools:itemCount="10"
-                    tools:listitem="@layout/holder_headline_item" />
-
+                    tools:listitem="@layout/holder_headline_item"
+                    tools:spanCount="2" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
