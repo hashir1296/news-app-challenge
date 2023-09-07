@@ -1,6 +1,5 @@
 package com.example.newsapp.presentation.newsList
 
-import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -33,4 +32,29 @@ class NewsHeadlineDomainModelTest {
     }
 
 
+    @Test
+    fun `domain model should not return null if response model has null values`() {
+        //Arrange
+        val dummyResponseModel = NewsListResponseModel(
+            status = "", totalResults = 1, articles = listOf(
+                NewsListResponseModel.Article(
+                    author = null,
+                    title = null,
+                    urlToImage = null,
+                    url = null,
+                    source = NewsListResponseModel.Article.Source(id = "", name = "BBC"),
+                    publishedAt = null,
+                    description = null,
+                    content = null
+                )
+            )
+        )
+        //Act
+        val sut = dummyResponseModel.articles[0].toDomainModel()
+
+        //Assert
+        assertEquals("", sut.title)
+        assertEquals("", sut.description)
+        assertEquals("", sut.author)
+    }
 }
