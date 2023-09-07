@@ -2,7 +2,6 @@ package com.example.newsapp.presentation.newsList
 
 import android.os.Parcelable
 import android.text.Spanned
-import androidx.core.text.HtmlCompat
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
 
@@ -13,7 +12,7 @@ data class NewsHeadlineDomainModel(
     val author: String,
     val publishedDate: String,
     val description: String,
-    val content: @RawValue Spanned
+    val content: String
 ) : Parcelable
 
 
@@ -24,8 +23,6 @@ fun NewsListResponseModel.Article.toDomainModel(): NewsHeadlineDomainModel {
         author = this.author ?: "",
         publishedDate = this.publishedAt ?: "",
         description = this.description ?: "",
-        content = HtmlCompat.fromHtml(
-            this.content?:"", HtmlCompat.FROM_HTML_MODE_COMPACT
-        )
+        content = this.content ?: ""
     )
 }

@@ -180,10 +180,8 @@ dependencies {
 
 
 
-
     //Testing libraries - Local Unit tests
     testImplementation("junit:junit:4.13.2")
-    kaptTest("com.google.dagger:hilt-android-compiler:2.44")
 
 
     //Testing libraries

@@ -18,7 +18,7 @@ class NewsDetailFragment : Fragment() {
 
     private val args by navArgs<NewsDetailFragmentArgs>()
 
-    val viewModel: NewsDetailViewModel by viewModels()
+    private val viewModel: NewsDetailViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

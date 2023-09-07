@@ -1,6 +1,7 @@
 package com.example.newsapp.presentation.newsDetail
 
-import androidx.core.text.toSpanned
+import android.text.Spanned
+import androidx.core.text.HtmlCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.newsapp.presentation.newsList.NewsHeadlineDomainModel
@@ -24,7 +25,7 @@ class NewsDetailViewModel @Inject constructor() : ViewModel() {
     private val _description = MutableStateFlow("")
     val description = _description.asStateFlow()
 
-    private val _content = MutableStateFlow("".toSpanned())
+    private val _content = MutableStateFlow<Spanned?>(null)
     val content = _content.asStateFlow()
 
     fun getNewsDetails(newsItem: NewsHeadlineDomainModel) {
@@ -32,8 +33,19 @@ class NewsDetailViewModel @Inject constructor() : ViewModel() {
             _title.value = newsItem.title
             _imageURL.value = newsItem.imageURL
             _description.value = newsItem.description
-            _content.value = newsItem.content ?: "".toSpanned()
+            _content.value = formatHtmlContentFromString(newsItem.content)
         }
+    }
+
+    private fun formatHtmlContentFromString(content: String?): Spanned? {
+        var spanned: Spanned? = null
+
+        content?.let {
+            spanned = HtmlCompat.fromHtml(
+                content, HtmlCompat.FROM_HTML_MODE_COMPACT
+            )
+        }
+        return spanned
     }
 }
 

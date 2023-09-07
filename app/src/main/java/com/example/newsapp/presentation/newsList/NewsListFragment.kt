@@ -1,6 +1,7 @@
 package com.example.newsapp.presentation.newsList
 
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.LayoutInflater
@@ -27,8 +28,12 @@ class NewsListFragment : Fragment() {
 
     private lateinit var binding: FragmentNewsListBinding
     private val viewModel: NewsListViewModel by viewModels()
-
     private lateinit var headlineListAdapter: NewsListAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        requireActivity().window?.navigationBarColor = Color.BLACK
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
