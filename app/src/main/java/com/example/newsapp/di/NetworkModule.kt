@@ -51,14 +51,6 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideUserRepository(
-        apiInterface: APIInterface
-    ): UserRepositoryImpl {
-        return UserRepositoryImpl(apiInterface = apiInterface)
-    }
-
-    @Singleton
-    @Provides
     fun provideOkHttpClient(): OkHttpClient = AppHttpClient.safeOkHttpClient
 
 }

@@ -3,9 +3,10 @@ package com.example.newsapp.data
 import com.example.newsapp.presentation.newsList.NewsListPagingSource
 import com.example.newsapp.presentation.newsList.NewsListResponseModel
 import com.google.gson.Gson
+import javax.inject.Inject
 
 
-class UserRepositoryImpl(
+class UserRepositoryImpl @Inject constructor(
     private val apiInterface: APIInterface
 ) : UserRepository {
 
