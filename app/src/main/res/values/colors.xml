@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Basic App colors-->
-    <color name="primary">#32338C</color>
-    <color name="secondary">#F49F0A</color>
-    <color name="tertiary_1">#2CA58D</color>
-    <color name="tertiary_2">#78C3FB</color>
-    <color name="tertiary_3">#F45B69</color>
+    <color name="purple">#32338C</color>
+    <color name="yellow">#F49F0A</color>
+    <color name="green">#2CA58D</color>
+    <color name="blue">#78C3FB</color>
+    <color name="red">#F45B69</color>
 
 
     <color name="gray_dark_text">#292A2E</color>

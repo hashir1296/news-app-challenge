@@ -8,9 +8,9 @@
 
     <fragment
         android:id="@+id/newsHeadlinesListFragment"
-        android:name="com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlinesListFragment"
+        android:name="com.example.newsapp.presentation.newsList.NewsListFragment"
         android:label="NewsHeadlinesListFragment"
-        tools:layout="@layout/fragment_news_headline_list">
+        tools:layout="@layout/fragment_news_list">
 
         <action
             android:id="@+id/action_newsHeadlinesListFragment_to_newsDetailFragment"
@@ -23,17 +23,17 @@
     </fragment>
     <fragment
         android:id="@+id/newsDetailFragment"
-        android:name="com.example.criticaltechworks_newsapp.presentation.newsDetail.NewsDetailFragment"
+        android:name="com.example.newsapp.presentation.newsDetail.NewsDetailFragment"
         android:label="NewsDetailFragment"
         tools:layout="@layout/fragment_news_detail">
         <argument
             android:name="newsItem"
-            app:argType="com.example.criticaltechworks_newsapp.presentation.newsList.NewsHeadlineDomainModel" />
+            app:argType="com.example.newsapp.presentation.newsList.NewsHeadlineDomainModel" />
     </fragment>
 
     <fragment
         android:id="@+id/biometricVerificationFragment"
-        android:name="com.example.criticaltechworks_newsapp.presentation.biometricVerification.BiometricVerificationFragment"
+        android:name="com.example.newsapp.presentation.biometricVerification.BiometricVerificationFragment"
         android:label="BiometricVerificationFragment"
         tools:layout="@layout/fragment_biometric_verification">
         <action
