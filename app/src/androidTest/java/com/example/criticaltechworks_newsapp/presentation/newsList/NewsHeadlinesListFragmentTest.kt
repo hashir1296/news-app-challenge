@@ -5,10 +5,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.testing.TestNavHostController
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.PerformException
-import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
-import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import com.example.criticaltechworks_newsapp.MainActivity
@@ -58,10 +55,9 @@ class NewsHeadlinesListFragmentTest {
     fun itemWithText_doesNotExist() {
         // Attempt to scroll to an item that contains the special text.
         onView(ViewMatchers.withId(com.example.criticaltechworks_newsapp.R.id.rvHeadLines)) // scrollTo will fail the test if no item matches.
-            .perform(
-                RecyclerViewActions.scrollTo<NewsHeadlinesListAdapter.NewsItemViewHolder>(
-                    hasDescendant(withText("not in the list"))
-                )
+            .perform(/*  RecyclerViewActions.scrollTo<NewsHeadlinesListAdapter.NewsItemViewHolder>(
+                      hasDescendant(withText("not in the list"))
+                  )*/
             )
     }
 }

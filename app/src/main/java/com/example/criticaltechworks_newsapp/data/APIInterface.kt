@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface APIInterface {
 
     @GET(Global.Constants.EndPoints.TOP_HEADLINES)
-    fun getTopHeadlinesAsync(
+     fun getTopHeadlinesAsync(
         @Query("sources") sources: String,
         @Query("pageSize") pageSize: Int,
         @Query("page") page: Int

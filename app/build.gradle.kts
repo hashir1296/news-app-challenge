@@ -174,7 +174,7 @@ dependencies {
     //Testing libraries - Local Unit tests
     testImplementation("androidx.arch.core:core-testing:2.2.0")
     testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
-    testImplementation("com.squareup.okhttp3:mockwebserver:4.9.0")
+    testImplementation("com.squareup.okhttp3:mockwebserver:5.0.0-alpha.11")
     testImplementation("io.mockk:mockk:1.12.3")
     testImplementation("androidx.paging:paging-common:3.1.1")
     testImplementation("androidx.paging:paging-common:3.1.1")
